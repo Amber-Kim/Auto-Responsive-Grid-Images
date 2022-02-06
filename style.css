@@ -1,0 +1,107 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #333
+}
+
+h2:after {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  border-top-color: #fff;
+  bottom: -52%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+}
+
+h2:before {
+  content: "";
+  background: #fff;
+  position: absolute;
+  height: 2px;
+  width: 30%;
+  bottom: 0;
+  left: 35%;
+}
+
+/* main-responsive-component */
+.wrapper {
+  display: grid;
+  /*   defines-column how should it be like size, fraction etc */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /*   defines-rows */
+  grid-template-rows: repeat(2, 300px);
+  margin: 50px 100px;
+  /*     width:1200px; */
+}
+
+.wrapper>div>img:hover {
+  opacity: 1;
+}
+
+.wrapper>div>img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.wrapper>div:hover {
+  transform: scale(1.3);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.wrapper>div {
+  background: #fff;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  transition: .3s;
+}
+
+h2 {
+  color: #fff;
+  /*   background:#333; */
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  text-transform: uppercase;
+  position: relative;
+  animation-name: grid-responsive;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: .2s;
+}
+
+
+@keyframes grid-responsive {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+
+  25% {
+    left: 0px;
+    top: 20px;
+  }
+
+  50% {
+    left: 0px;
+    top: 0px;
+  }
+
+  75% {
+    left: 0;
+    right: 50px;
+    top: 0px;
+  }
+
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
